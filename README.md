@@ -2,16 +2,15 @@
 
 A modern, responsive Angular 18+ dashboard application for managing products and real-time order tracking with role-based access control (RBAC).
 
----
 
 ## 🚀 Features
 
--  Product Management (Add/Edit/Delete with modal)
--  Real-time Order Dashboard (AG Grid, Live Simulation)
--  Role-Based Access Control
--  Responsive Design (Mobile-first)
--  Route Guards by User Role
--  Clean, component-based architecture
+- ✅ Product Management (Add/Edit/Delete with modal)
+- ✅ Real-time Order Dashboard (AG Grid, Live Simulation)
+- ✅ Role-Based Access Control
+- ✅ Responsive Design (Mobile-first)
+- ✅ Route Guards by User Role
+- ✅ Clean, component-based architecture
 
 ---
 
@@ -36,18 +35,18 @@ UI: AG Grid + SCSS + Responsive design
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Ürünleri ve gerçek zamanlı siparişleri yönetmek için modern, duyarlı Angular 18+ panosu. Amatis'teki TechStore Çalışması için oluşturuldu.
+Ürünleri ve gerçek zamanlı siparişleri yönetmek için modern, duyarlı Angular 18+ panosu.
 
 ## 🚀 Özellikler
 
-- Giriş ve Rol Tabanlı Erişim (Admin, Satış, Ürün Yöneticisi)
-- Ürün listeleme, filtreleme, arama
-- Gerçek zamanlı sipariş paneli
-- Modal tabanlı sipariş detay görüntüleyici
-- Mobil öncelikli responsive tasarım
-- Angular 18 + Standalone Bileşenler
-- AG Grid entegrasyonu
-- Kullanıcı geri bildirimi için toast bildirimleri
+- ✅ Giriş ve Rol Tabanlı Erişim (Admin, Satış, Ürün Yöneticisi)
+- ✅ Ürün listeleme, filtreleme, arama
+- ✅ Gerçek zamanlı sipariş paneli
+- ✅ Modal tabanlı sipariş detay görüntüleyici
+- ✅ Mobil öncelikli responsive tasarım
+- ✅ Angular 18 + Standalone Bileşenler
+- ✅ AG Grid entegrasyonu
+- ✅ Kullanıcı geri bildirimileri
 
 ## 🛠 Kurulum Talimatları
 
