@@ -1,0 +1,24 @@
+<div class="layout">
+  <aside class="sidebar">
+    <h3>🔷 Dashboard</h3>
+    <nav>
+      <a routerLink="/products" routerLinkActive="active">📦 Products</a>
+      <a routerLink="/orders" routerLinkActive="active">📋 Orders</a>
+    </nav>
+  </aside>
+
+  <div class="main-content">
+    <header class="navbar">
+      <div class="left-nav"></div>
+      <div class="right-nav" *ngIf="currentUser">
+        <img [src]="currentUser.image" class="avatar" alt="User avatar" />
+        <span>{{ currentUser.firstName }} {{ currentUser.lastName }}</span>
+        <button (click)="logOut()">🔑 Logout</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

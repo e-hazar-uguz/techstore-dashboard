@@ -1,0 +1,101 @@
+<div *ngIf="loading" class="loading-spinner">
+  <div class="spinner"></div>
+</div>
+
+
+<div class="product-list-container" *ngIf="!loading">
+
+<div class="prodcut-title">
+  <h2>Products</h2>
+</div>
+
+  <div class="top-bar">
+    <div class="toolbar">
+      <input type="text" placeholder="Search product!" [ngModel]="searchQuery"
+        (ngModelChange)="searchInput$.next($event)" />
+
+
+      <select [(ngModel)]="selectedCategory" (change)="onCategoryChange()">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of categories" [value]="category.slug">
+          {{ category.name }}
+        </option>
+      </select>
+
+      <button style="background-color: chocolate;" (click)="onSearch()">Ara</button>
+      <button style="margin-left: auto;background-color: green;" (click)="openForm()">+ Add New Product</button>
+    </div>
+
+
+    <div class="pagination-toolbar" *ngIf="!error && products.length > 0">
+      <div class="pagination-controls">
+        <span>Sayfa {{ currentPage }} / {{ totalPages }}</span>
+        <span class="total-count">| Total: {{ total }} Products</span>
+        <button [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)">
+          Previous
+        </button>
+        <button [disabled]="currentPage === totalPages" (click)="onPageChange(currentPage + 1)">
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="ag-grid-container">
+    <ag-grid-angular class="ag-theme-alpine full-grid" [rowData]="products" [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef" [pagination]="false" >
+    </ag-grid-angular>
+  </div>
+
+
+</div>
+
+
+<div class="modal" *ngIf="isFormOpen">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <h2>{{ isEditMode ? 'Edit Product' : 'Add New Product' }}</h2>
+
+    <label>Title</label>
+    <input formControlName="title" />
+    <div class="form-error" *ngIf="productForm.get('title')?.invalid && productForm.get('title')?.touched">
+      Title is required.
+    </div>
+
+    <label>Price</label>
+    <input type="number" formControlName="price" />
+    <div class="form-error" *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+      Price must be 0 or higher.
+    </div>
+
+    <label>Stock</label>
+    <input type="number" formControlName="stock" />
+    <div class="form-error" *ngIf="productForm.get('stock')?.invalid && productForm.get('stock')?.touched">
+      Stock must be 0 or higher.
+    </div>
+
+    <label>Category</label>
+    <select formControlName="category">
+      <option value="">Select Category</option>
+      <option *ngFor="let cat of categories" [value]="cat.slug">{{ cat.name }}</option>
+    </select>
+    <div class="form-error" *ngIf="productForm.get('category')?.invalid && productForm.get('category')?.touched">
+      Category is required.
+    </div>
+
+    <label>Description</label>
+    <textarea formControlName="description"></textarea>
+
+    <label>Upload Image</label>
+    <input type="file" (change)="onImageSelected($event)" />
+    <img *ngIf="imagePreview" [src]="imagePreview" style="max-width: 150px; margin-top: 8px;" />
+
+    <div class="modal-actions">
+      <button type="submit" [disabled]="productForm.invalid">
+        {{ isEditMode ? 'Update' : 'Add' }}
+      </button>
+      <button type="button" (click)="closeForm()">Cancel</button>
+    </div>
+  </form>
+</div>

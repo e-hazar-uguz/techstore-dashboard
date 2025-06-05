@@ -1,0 +1,51 @@
+<div class="order-dashboard">
+  <div class="dashboard-container">
+    <h2>Real-Time Order Dashboard</h2>
+
+    <div class="summary">
+      <p style="color: blue;">🕓 Last 24 Hours Orders: <strong>{{ last24HoursCount }}</strong></p>
+    </div>
+
+    <ag-grid-angular
+      class="ag-theme-alpine"
+      style="height: calc(100vh - 350px); width: 100%"
+      [rowData]="orders"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [animateRows]="true"
+      (gridReady)="onGridReady($event)">
+    </ag-grid-angular>
+  </div>
+
+  <div class="modal-overlay" *ngIf="isDetailModalOpen">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Order #{{ selectedOrder?.id }} Details</h3>
+        <button class="close-btn" (click)="closeModal()">×</button>
+      </div>
+
+      <div class="modal-body" *ngIf="selectedOrder">
+        <table class="order-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th>Image</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of selectedOrder.products">
+              <td>{{ p.title }}</td>
+              <td>{{ p.quantity }}</td>
+              <td>${{ p.price }}</td>
+              <td>${{ p.discountedTotal }}</td>
+              <td><img [src]="p.thumbnail" alt="thumb" /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
