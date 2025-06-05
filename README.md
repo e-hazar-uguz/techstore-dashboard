@@ -1,27 +1,68 @@
-# TechstoreDashboard
+# 🛍️ TechStore E-Commerce Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+A modern, responsive Angular 18+ dashboard application for managing products and real-time order tracking with role-based access control (RBAC).
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Features
 
-## Code scaffolding
+-  Product Management (Add/Edit/Delete with modal)
+-  Real-time Order Dashboard (AG Grid, Live Simulation)
+-  Role-Based Access Control
+-  Responsive Design (Mobile-first)
+-  Route Guards by User Role
+-  Clean, component-based architecture
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Setup Instructions
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+git clone https://github.com/e-hazar-uguz/techstore-dashboard.git
+cd techstore-dashboard
+npm install
+ng serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Architecture Summary
+Independent Components: Angular 18 style
 
-## Running end-to-end tests
+Service Layer: Data retrieval via dummyjson
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Guards: Role-based route protection
 
-## Further help
+Routing: Lazy-load compatible structure
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+UI: AG Grid + SCSS + Responsive design
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Ürünleri ve gerçek zamanlı siparişleri yönetmek için modern, duyarlı Angular 18+ panosu. Amatis'teki TechStore Çalışması için oluşturuldu.
+
+## 🚀 Özellikler
+
+- Giriş ve Rol Tabanlı Erişim (Admin, Satış, Ürün Yöneticisi)
+- Ürün listeleme, filtreleme, arama
+- Gerçek zamanlı sipariş paneli
+- Modal tabanlı sipariş detay görüntüleyici
+- Mobil öncelikli responsive tasarım
+- Angular 18 + Standalone Bileşenler
+- AG Grid entegrasyonu
+- Kullanıcı geri bildirimi için toast bildirimleri
+
+## 🛠 Kurulum Talimatları
+
+git clone https://github.com/e-hazar-uguz/techstore-dashboard.git
+cd techstore-dashboard
+npm install
+ng serve
+*****************************************************
+Mimari Özeti
+Standalone Bileşenler: Angular 18 tarzı
+
+Servis Katmanı: dummyjson üzerinden veri çekimi
+
+Guardlar: Rol tabanlı rota koruması
+
+Yönlendirme: Lazy-load uyumlu yapı
+
+UI: AG Grid + SCSS + Responsive tasarım
